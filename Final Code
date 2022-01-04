@@ -8,14 +8,14 @@ int servoBasePos = 90; // stores position of the base servo motor
 int servoArmPos = 90; // stores position of the arm servo motor
 int servoMouthPos = 90; // stores position of the mouth servo motor
 
-int baseButtonCC = 6; // input pin for PB to turn the base servo counter-clockwise
-int baseButtonCCW = 7; // input pin for PB to turn the base servo clockwise
+int baseButtonCC = 6; // input pin for button to turn the base servo CCW
+int baseButtonCCW = 7; // input pin for button to turn the base servo CW
 
-int ArmButtonCC = 8; // input pin for PB to turn the arm servo counter-clockwise
-int ArmButtonCCW = 9; // input pin for PB to turn the arm servo clockwise
+int ArmButtonCC = 8; // input pin for button to turn the arm servo CCW
+int ArmButtonCCW = 9; // input pin for button to turn the arm servo CW
 
-int MouthButtonCC = 10; // input pin for PB to turn the mouth servo counter-clockwise
-int MouthButtonCCW = 11; // input pin for PB to turn the mouth servo clockwise
+int MouthButtonCC = 10; // input pin for button to turn the mouth servo CCW
+int MouthButtonCCW = 11; // input pin for button to turn the mouth servo CW
 
 
 void setup() {
