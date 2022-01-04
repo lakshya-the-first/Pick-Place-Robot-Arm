@@ -1,4 +1,5 @@
 Pick-Place-Robot-Arm
+
   A robot arm powered by 3 servo motors, controlled with an Arduino Uno and 6 buttons, which can pick up small objects from various heights and move them to a specified location.
   The robot was made out of popsicle sticks, wood glue, small metal strips, scotch tape, and zipties along with the wires, servo motors, and Arduino Uno required for the movement.
   For the testing of this device, a golf ball was lifted and placed on top of a soda can approx. 10cm away. The task in reverse could also be completed. 
