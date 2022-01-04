@@ -1,0 +1,88 @@
+#include <Servo.h>
+
+Servo servoBase; // create servo object to control the first servo (rotates the base (changes direction))
+Servo servoArm; // create servo object to control the second servo (rotates the arm (changes height))
+Servo servoMouth; // create servo object to control the third servo (rotates object storage gate (opens and closes the enclosure where the object rests))
+
+int servoBasePos = 90; // stores position of the base servo motor
+int servoArmPos = 90; // stores position of the arm servo motor
+int servoMouthPos = 90; // stores position of the mouth servo motor
+
+int baseButtonCC = 6; // input pin for PB to turn the base servo counter-clockwise
+int baseButtonCCW = 7; // input pin for PB to turn the base servo clockwise
+
+int ArmButtonCC = 8; // input pin for PB to turn the arm servo counter-clockwise
+int ArmButtonCCW = 9; // input pin for PB to turn the arm servo clockwise
+
+int MouthButtonCC = 10; // input pin for PB to turn the mouth servo counter-clockwise
+int MouthButtonCCW = 11; // input pin for PB to turn the mouth servo clockwise
+
+
+void setup() {
+  // declaration of inputs (both clockwise & counter-clockwise
+  pinMode(baseButtonCC, INPUT);  
+  pinMode(baseButtonCCW, INPUT); 
+  pinMode(armButtonCC, INPUT); 
+  pinMode(armBbuttonCCW, INPUT); 
+  pinMode(mouthButtonCC, INPUT);  
+  pinMode(mouthButtonCCW, INPUT); 
+
+  // attachment of servo motors with digital pins
+  servoBase.attach(8);  
+  servoArm.attach(9); 
+  servoMouth.attach(10);  
+  
+  // initialize the positions of all 3 servo motors (done to prevent confusion with user)
+  servoBase.write(servoBasePos);  
+  servoArm.write(servoArmPos);  
+  servoMouth.write(servoMouthPos);  
+}
+
+
+void loop() {
+
+// Base servo motor control //
+  
+  if (digitalRead(baseButtonCC) == 1 && servoBasePos < 180){  // when baseButtonCC is closed & the base servo position is less than 180 degrees, the base servo rotates CCW
+    servoBasePos++;                                      // base servo rotates CWW in increments of 1 degree
+    servoBase.write(servoBasePos);                        // servo goes to position in variable 'servoBasePos'
+    delay(10);                                   // 20ms delay so that servo can move completely before another input is read
+  }
+
+  if (digitalRead(baseButtonCCW) == 1 && servoBasePos > 0){   // when baseButtonCCW is closed & the base servo position is higher than 0 degrees, the base servo rotates CW
+    servoBasePos--;                                      // base servo rotates CW in increments of 1 degree
+    myservoBase.write(servoBasPos);                        // servo goes to position in variable 'servoBasePos'
+    delay(10);                                   // 10ms delay so that servo can move completely before another input is read
+  }
+
+
+// Arm servo motor control //
+
+  if (digitalRead(armButtonCC) == 1 && servoArmPos < 180){  // when armButtonCC is closed & the arm servo position is less than 180 degrees, the arm servo rotates CCW
+    servoArmPos++;                                      // arm servo rotates CWW in increments of 1 degree
+    servoArm.write(servoArmPos);                        // tell servo to go to position in variable 'servoArmPos'
+    delay(20);                                   // 20ms delay so that servo can move completely before another input is read
+  }
+
+  if (digitalRead(armButtonCCW) == 1 && servoArmPos > 0){   // when armButtonCCW is closed and the arm servo position is higher than 0 degrees, the arm servo rotates CW
+    servoArmPos--;                                      // arm servo rotates CW in increments of 1 degree
+    servoArm.write(servoArmPos);                        // tell servo to go to position in variable 'servoArmPos'
+    delay(20);                                   // 20ms delay so that servo can move completely before another input is read
+  }
+
+
+  // Mouth servo motor control //
+
+  if (digitalRead(mouthButtonCC) == 1 && servoMouthPos < 180){  // when mouthButtonCC is closed and the mouth servo position is less than 180 degrees, the mouth servo rotates CCW
+    servoMouthPos++;                                      // mouth servo rotates CW in increments of 1 degree
+    servoMouth.write(servoMouthPos);                        // tell servo to go to position in variable 'servoMouthPos'
+    delay(10);                                   // 10ms delay so that servo can move completely before another input is read
+  }
+
+  if (digitalRead(mouthButtonCCW) == 1 && servoMouthPos > 0){   // when mouthButtonCCW is closed and mouth servo position position is higher than 0 degrees, the mouth servo rotates CW
+    servoMouthPos--;                                      // mouth servo rotates CCW in increments of 1 degree
+    servoMouth.write(servoMouthPos);                        // tell servo to go to position in variable 'servoMouthPos'
+    delay(10);                                   // 10ms delay so that servo can move completely before another input is read
+  }
+
+}
