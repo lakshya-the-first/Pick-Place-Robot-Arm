@@ -15,4 +15,5 @@ Controlling the Arm:
   
   Mouth Servo: Use buttons attached to pins 10 and 11 to control counterclock-wise and clockwise movement respectively
   
-To see a video of the robot in action, click here (ADD LINK TO GOOGLE DRIVE)!
+To see a video of the robot in action, click the Google Drive link:
+  https://drive.google.com/file/d/13gTPeMvPd5HZFwXKiJc5Dom0a41QJwg9/view?usp=sharing
